@@ -15,8 +15,8 @@ function App() {
 
 
   ]);
-  let deleteBlog =(id)=>{
-    setBlogs((prevState)=>prevState.filter(blog=>blog.id != id))
+  let deleteBlog = (id) => {
+    setBlogs((prevState) => prevState.filter(blog => blog.id != id))
 
   }
 
@@ -28,12 +28,17 @@ function App() {
 
       <div>
         <h1>Blogs</h1>
-        {blogs.map((blog) => (
-          <li key={blog.id}>
-            {blog.id} - {blog.author}
-            <button onClick={()=>deleteBlog(blog.id)}>Delete button </button>
-          </li>
-        ))}
+        {blogs.length > 0 ?
+          (blogs.map((blog) => (
+            <li key={blog.id}>
+              {blog.id} - {blog.author}
+              <button onClick={() => deleteBlog(blog.id)}>Delete button </button>
+            </li>
+          ))
+          )
+          : (
+            <p>No Blogs available</p>
+          )}
       </div>
 
     </>
