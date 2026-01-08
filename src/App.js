@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 
 
 function App() {
-
+  let [showblogs,setShowblogs] = useState(true);
 
   let [blogs, setBlogs] = useState([
     { 'id': 1, 'author': 'leo' },
@@ -18,9 +18,14 @@ function App() {
 
   return (
     <>
-     
 
-      <Hero blogs ={blogs}/>
+      {showblogs && <Hero blogs={blogs} setShowblogs={setShowblogs} />}
+
+      {!showblogs && (
+        <button onClick={() => setShowblogs(true)}>
+          Show Blogs
+        </button>
+      )}
 
     </>
   );
