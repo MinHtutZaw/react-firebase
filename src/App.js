@@ -8,10 +8,11 @@ import Hero from './components/Hero';
 function App() {
   let [showblogs,setShowblogs] = useState(true);
 
+  
+
   let [blogs, setBlogs] = useState([
     { 'id': 1, 'author': 'leo' },
     { 'id': 2, 'author': 'leon' }
-
 
   ]);
   
